@@ -23,7 +23,7 @@ if Tree.NodeStatus == 0
         mass(CurtIndex) = Tree.Height;
     else
         c = 2 * (log(Tree.Size - 1) + 0.5772156649) - 2 * (Tree.Size - 1) / Tree.Size;
-        mass(CurtIndex) = Tree.Height + c;
+        mass(CurtIndex) = Tree.Height + c; % = Tree.c(Tree.Size) + Tree.Height, right?
     end
     return;
     

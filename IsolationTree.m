@@ -39,7 +39,7 @@ if CurtHeight >= Paras.HeightLimit || NumInst <= 1
 else
     Tree.NodeStatus = 1;
     % randomly select a split attribute
-    [temp, rindex] = max(rand(1, Paras.NumDim));
+    [temp, rindex] = max(rand(1, Paras.NumDim)); % This could be done better as like ceil(rand())*Paras.NumDim 
     Tree.SplitAttribute = Paras.IndexDim(rindex);
     CurtData = Data(CurtIndex, Tree.SplitAttribute);
     Tree.SplitPoint = min(CurtData) + (max(CurtData) - min(CurtData)) * rand(1);

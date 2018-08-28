@@ -1,7 +1,7 @@
-clear
+% clear
 
 %% load data
-data=load('breastw_683.csv');
+data=load('Data/breastw_683.csv');
 ADLabels=data(:,end);
 Data=data(:,1:end-1);
  
