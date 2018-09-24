@@ -46,9 +46,9 @@ parser.addParameter('rseed',0);
 
 parser.parse(varargin{:});
 
-iForest.NumTree = parser.Results.NumTree;
-iForest.NumSub  = parser.Results.NumSub;
-iForest.NumDim  = parser.Results.NumDim;
+iForest.NumTree = ceil(parser.Results.NumTree); % use ceil in case value is not integer (might happen with some autotuning testing parameters on a non-integer grid)
+iForest.NumSub  = ceil(parser.Results.NumSub);
+iForest.NumDim  = ceil(parser.Results.NumDim);
 iForest.rseed   = parser.Results.rseed;
 
 iForest = IsolationForest(data.', iForest.NumTree, iForest.NumSub, iForest.NumDim, iForest.rseed);
