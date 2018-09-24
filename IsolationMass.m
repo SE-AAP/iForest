@@ -30,7 +30,8 @@ if Tree.NodeStatus == 0
 else
     
     LeftCurtIndex = CurtIndex(Data(CurtIndex, Tree.SplitAttribute) < Tree.SplitPoint);
-    RightCurtIndex = setdiff(CurtIndex, LeftCurtIndex);
+    %     RightCurtIndex = setdiff(CurtIndex, LeftCurtIndex);
+    RightCurtIndex = CurtIndex(Data(CurtIndex, Tree.SplitAttribute) >= Tree.SplitPoint);
     
     if ~isempty(LeftCurtIndex)
         mass = IsolationMass(Data, LeftCurtIndex, Tree.LeftChild, mass);

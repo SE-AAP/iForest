@@ -46,7 +46,8 @@ else
     
     % instance index for left child and right children
     LeftCurtIndex = CurtIndex(CurtData < Tree.SplitPoint);
-    RightCurtIndex = setdiff(CurtIndex, LeftCurtIndex);
+    %     RightCurtIndex = setdiff(CurtIndex, LeftCurtIndex);
+    RightCurtIndex = CurtIndex(CurtData >= Tree.SplitPoint);
     
     % bulit right and left child trees
     Tree.LeftChild = IsolationTree(Data, LeftCurtIndex, CurtHeight + 1, Paras);
