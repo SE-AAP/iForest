@@ -30,6 +30,7 @@ if Tree.NodeStatus == 0
 else
     
     LeftCurtIndex = CurtIndex(Data(CurtIndex, Tree.SplitAttribute) < Tree.SplitPoint);
+    % Optimized tree splitting (huge perf gain because setdiff is slow)
     %     RightCurtIndex = setdiff(CurtIndex, LeftCurtIndex);
     RightCurtIndex = CurtIndex(Data(CurtIndex, Tree.SplitAttribute) >= Tree.SplitPoint);
     

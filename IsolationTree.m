@@ -46,6 +46,7 @@ else
     
     % instance index for left child and right children
     LeftCurtIndex = CurtIndex(CurtData < Tree.SplitPoint);
+    % Optimized tree splitting (huge perf gain because setdiff is slow)
     %     RightCurtIndex = setdiff(CurtIndex, LeftCurtIndex);
     RightCurtIndex = CurtIndex(CurtData >= Tree.SplitPoint);
     
